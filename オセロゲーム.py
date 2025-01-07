@@ -32,6 +32,8 @@ class OthelloGame:
             json.dump([list(move) for move in self.bad_moves], f)
 
     def reset_learning_data(self):
+        delete_count_history = len(self.history_of_moves)  # 最低1個は削除
+        self.history_of_moves = self.history_of_moves[delete_count_history:]  # 前方から削除
         self.bad_moves = []
         self.save_learning_data()
         messagebox.showinfo("学習データリセット", "学習記録をリセットしました。")
