@@ -216,7 +216,7 @@ class OthelloGame:
         return None
 
     def get_second_turn_move(self):
-        # AIの2番目の手：平行にならないように
+        
         best_move = None
         for row in range(self.board_size):
             for col in range(self.board_size):
